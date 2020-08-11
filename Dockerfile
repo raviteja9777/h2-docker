@@ -10,6 +10,7 @@ ADD kit/sql/create.sql /opt/h2/sql
 ADD kit/createDb.sh /opt/h2
 RUN chmod +x /opt/h2/*.sh
 
+VOLUME /h2-data
 
 EXPOSE 9092 9093
 
