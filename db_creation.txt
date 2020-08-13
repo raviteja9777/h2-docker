@@ -1,0 +1,31 @@
+Intially I have created the new database with the below procedure and created a table:
+> java -cp h2-*.jar org.h2.tools.Shell
+
+Welcome to H2 Shell
+Exit with Ctrl+C
+[Enter]   jdbc:h2:mem:2
+URL       jdbc:h2:./path/to/database
+[Enter]   org.h2.Driver
+Driver
+[Enter]   sa
+User      your_username
+Password  (hidden)
+Type the same password again to confirm database creation.
+Password  (hidden)
+Connected
+
+sql> quit
+Connection closed
+
+
+
+command for backup using the Script Tool:
+
+java -cp h2-*.jar org.h2.tools.Script -url jdbc:h2:/h2-data/docker_test -user test -password 'test' -script /h2-data/docker_test.zip -options compression zip
+
+
+command for restore from a Script:
+java -cp h2-*.jar org.h2.tools.RunScript -url jdbc:h2:/h2-data/docker_test -user test -password 'test' -script /h2-data/docker_test.zip -options compression zip
+
+
+I have tested the above commands successfully
